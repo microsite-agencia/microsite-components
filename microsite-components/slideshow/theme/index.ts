@@ -1,25 +1,4 @@
-import { TYPE_Slide_V2 } from "components/admin/types";
-import { Theme } from "./types";
-
-export const slideshow: TYPE_Slide_V2 = {
-  id: 0,
-  slug: '',
-  title: '',
-  width: 0,
-  height: 0,
-  animationTime: 0,
-  displayNav: true,
-  displayTitle: true,
-  displaySubtitle: true,
-  displayDescription: true,
-  displayButton: true,
-  slides: [],
-}
-
-export const active = {
-  slideshow: slideshow,
-  current: '',
-}
+import { Theme } from "../types";
 
 export const theme: Theme = {
   background: 'linear-gradient(0deg, #cecece, #fefefe)',

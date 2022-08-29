@@ -1,11 +1,10 @@
 import Image from 'next/image'
 import styled, { css, keyframes } from 'styled-components'
 import { useConfig } from 'components/admin/context'
-import { ContainerProps, InfoProps, ResponsiveSlideProps } from './core/types'
+import { ContainerProps, InfoProps, ResponsiveSlideProps } from '../types'
 
-export const ResponsiveSlide = ({ data, height, visible, slideshow, theme, width }: ResponsiveSlideProps) => {
+export const ResponsiveSlide = ({ data, height, visible, slideshow, theme }: ResponsiveSlideProps) => {
   const { windowWidth } = useConfig()
-
 
   return (
     <Container visible={visible} height={height} animationTime={slideshow.animationTime}>
@@ -39,7 +38,7 @@ export const ResponsiveSlide = ({ data, height, visible, slideshow, theme, width
 
 const Container = styled.div<ContainerProps>`${({ visible, animationTime, height }) => css`
   display: ${visible ? 'block' : 'none'};
-  animation: ${AppearAndHidden} ${animationTime + 'ms'} linear;
+  animation: ${AppearAndHidden} ${animationTime + 'ms'} linear infinite;
   height: ${height + 'px'};
   width: 100vw;
 `}`
@@ -83,7 +82,7 @@ const Title = styled.h1<ContainerProps>`${({ visible, align, styleTheme, animati
   background: ${styleTheme?.title.background};
   color: ${styleTheme?.title.color};
   text-align: ${align};
-  animation: ${align === 'left' ? SlideLeft : SlideRight} ${(animationTime) + 'ms'} linear forwards;
+  animation: ${align === 'left' ? SlideLeft : SlideRight} ${(animationTime) + 'ms'} linear infinite;
 
   @media screen and (max-width: 991px) {
     text-align: center;
@@ -103,7 +102,7 @@ const Subtitle = styled.h2<ContainerProps>`${({ visible, align, styleTheme, anim
   background: ${styleTheme?.subtitle.background};
   color: ${styleTheme?.subtitle.color};
   text-align: ${align};
-  animation: ${align === 'right' ? SlideLeft : SlideRight} ${animationTime + 'ms'} linear forwards;
+  animation: ${align === 'right' ? SlideLeft : SlideRight} ${animationTime + 'ms'} linear infinite;
 
   @media screen and (max-width: 991px) {
     text-align: center;
@@ -123,7 +122,7 @@ const Description = styled.p<ContainerProps>`${({ visible, align, styleTheme, an
   color: ${styleTheme?.description.color};
   text-align: ${align};
   opacity: 0;
-  animation: ${Appear} ${animationTime + 'ms'} forwards 0.8s;
+  animation: ${Appear} ${animationTime + 'ms'} infinite 0.8s;
 
   @media screen and (max-width: 991px) {
     text-align: center;
@@ -147,7 +146,7 @@ const Button = styled.a<ContainerProps>`${({ visible, styleTheme, animationTime 
   background: ${styleTheme?.button.background};
   color: ${styleTheme?.button.color};
   opacity: 0;
-  animation: ${AfterAppear} ${animationTime + 'ms'} forwards 1s;
+  animation: ${AfterAppear} ${animationTime + 'ms'} infinite 1s;
 
   &:hover {
     transform: scale(1.1);

@@ -1,5 +1,7 @@
 import { TYPE_Slide_V2, TYPE_Slide_v2_Images } from 'components/admin/types'
 
+export type SlideShow = TYPE_Slide_V2
+
 export type StyleProps = {
   background?: string
   color?: string
@@ -43,5 +45,6 @@ export type InfoProps = {
 }
 export type Active = {
   slideshow: TYPE_Slide_V2
+  slideHeight: number
   current: string
 }
