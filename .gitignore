@@ -25,6 +25,7 @@ next.config.js
 package.json
 tsconfig.json
 yarn.lock
+next-env.d.ts
 
 # misc
 .DS_Store
