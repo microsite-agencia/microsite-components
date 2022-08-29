@@ -16,11 +16,15 @@
 /build
 
 # non-components
-/src/api/
-/src/functions/
-/src/components/
+/src/
 /pages/
 /styles/
+.editorconfig
+.eslintrc.json
+next.config.js
+package.json
+tsconfig.json
+yarn.lock
 
 # misc
 .DS_Store
